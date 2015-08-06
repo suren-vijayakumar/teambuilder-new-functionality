@@ -1,6 +1,4 @@
-function randomNumber(min, max) {
-    return Math.floor(Math.random() * (1 + max - min) + min);
-}
+
 
 function shuffle(array) {// Fisher–Yates Shuffle
     var m = array.length, t, i;
@@ -25,10 +23,6 @@ function buttonAppend(){
 
         $('.buttonDiv').append("<button class='"+ i +"teamButton btn btn-primary btn-lg "+ " data-index = " + i + "'>" + (i) + "</button>");
 
-        //$("body").on('click', '.2teamButton', function() {
-        //    console.log("value set");
-        //    noTeams=2;
-        //});
     }
  $('.buttonDiv').append("<button class='randomButton btn btn-warning btn-lg'>random</button>");
 }
@@ -37,10 +31,14 @@ var cohortAppend = function(myArray, noTeams) {
 
     $(".cohortDiv").children().remove();
     for(var c=0; c<noTeams; c++) {
+
         //$(".cohortDiv").append("<div class ='group" + (c+1) +"'> <p>Group</p>" + (c+1) + "</div>");
-        $(".cohortDiv").append("<div class ='group'> <p>Group</p>" + (c+1) + "</div>");
+        $(".cohortDiv").append("<div class ='group'> Group " + (c+1) + "</div>");
         for (var f = 0; f < myArray[c].length; f++) {
+
             $(".cohortDiv").append("<div class='name'> "+ myArray[c][f].name + "</div>");
+
+            //$(".group"+c+1).append("<div class='name'> "+ myArray[c][f].name + "</div>");
 
         }
     }
