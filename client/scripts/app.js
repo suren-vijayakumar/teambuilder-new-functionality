@@ -37,7 +37,6 @@ var cohortAppend = function(myArray, noTeams) {
         for (var f = 0; f < myArray[c].length; f++) {
 
             //$(".cohortDiv").append("<div class='name'> "+ myArray[c][f].name + "</div>");
-
             $("#newGroup"+d).append("<div class='name'> "+ myArray[c][f].name + "</div>");
             var $g=$("#newGroup"+d).children().last();
              $g.hide().delay(1200*f).slideDown();
@@ -46,7 +45,6 @@ var cohortAppend = function(myArray, noTeams) {
     }
 
 };
-
 
 
 $(document).ready(function(){
