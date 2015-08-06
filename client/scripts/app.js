@@ -31,14 +31,16 @@ var cohortAppend = function(myArray, noTeams) {
 
     $(".cohortDiv").children().remove();
     for(var c=0; c<noTeams; c++) {
-
+        var d = c+1;
         //$(".cohortDiv").append("<div class ='group" + (c+1) +"'> <p>Group</p>" + (c+1) + "</div>");
-        $(".cohortDiv").append("<div class ='group'> Group " + (c+1) + "</div>");
+        $(".cohortDiv").append("<div id ='newGroup" + d +"'class ='group panel-body'> Group " + d + "</div>");
         for (var f = 0; f < myArray[c].length; f++) {
 
-            $(".cohortDiv").append("<div class='name'> "+ myArray[c][f].name + "</div>");
+            //$(".cohortDiv").append("<div class='name'> "+ myArray[c][f].name + "</div>");
 
-            //$(".group"+c+1).append("<div class='name'> "+ myArray[c][f].name + "</div>");
+            $("#newGroup"+d).append("<div class='name'> "+ myArray[c][f].name + "</div>");
+            var $g=$("#newGroup"+d).children().last();
+             $g.hide().delay(100*f).slideDown();
 
         }
     }
